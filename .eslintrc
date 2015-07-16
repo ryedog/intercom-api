@@ -10,6 +10,11 @@
   },
 
   "globals"   : {
+    "Intercom": false,
+    "intercom": false,
+    "before_promise": false,
+    "promise": true,
+    "subject": true,
     "chai": false,
     "sinon": false,
     "Replay": false

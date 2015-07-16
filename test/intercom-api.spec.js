@@ -1,6 +1,5 @@
 describe('Intercom api', function(){
 
-
   describe('Api methods', function() {
     var sample_methods = [
       'createUser',
@@ -10,7 +9,7 @@ describe('Intercom api', function(){
     ];
 
     it('should be the correct count', function() {
-      Intercom.api.should.have.length(25)
+      Intercom.api.should.have.length(25);
     });
 
     it('sampling of methods should be available', function() {
