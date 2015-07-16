@@ -1,15 +1,21 @@
 var gulp   = require('gulp')
+  , babel  = require('gulp-babel')
   , mocha  = require('gulp-mocha')
-  , eslint = require('gulp-eslint');
+  , eslint = require('gulp-eslint')
+  , babelr = require('babel/register');
 
 gulp.task('default', ['watch']);
 
 
-gulp.task('test',  function(){
+
+gulp.task('mocha',  function(){
   return gulp.src('test/*.js')
-    .pipe(mocha());
+    .pipe(mocha({
+        compilers: { js: babelr }
+    }));
 });
 
+gulp.task('test', ['mocha']);
 
 /**
  * Watch lib & test files an on change

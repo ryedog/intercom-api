@@ -6,7 +6,7 @@ describe('Admins Resource', function() {
     before_promise(function() {
       return intercom.getAdmins();
     });
-    
+
     it('returns list of admins', function() {
       subject.should.have.property('admins');
     });
