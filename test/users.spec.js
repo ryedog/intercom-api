@@ -28,6 +28,26 @@ describe('Users Resource', function() {
   });
 
 
+  describe('updateUser()', function() {
+    var updated_user = {
+      email: data.email,
+      name: 'Hurricane Hubbard'
+    };
+
+    before_promise(function() {
+      return intercom.updateUser(updated_user);
+    });
+
+    it('returns the same id as the previously created user', function() {
+      subject.id.should.eql(user.id);
+    });
+
+    it('updates the user', function() {
+      subject.name = updated_user.name;
+    });
+  });
+
+
   describe('getUser() with an id', function() {
     it('returns the user', function() {
       return intercom.getUser(user.id).should.eventually.containSubset(data);
