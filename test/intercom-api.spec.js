@@ -9,7 +9,7 @@ describe('Intercom api', function(){
     ];
 
     it('should be the correct count', function() {
-      Intercom.api.should.have.length(25);
+      Intercom.api.should.have.length(26);
     });
 
     it('sampling of methods should be available', function() {

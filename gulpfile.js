@@ -1,36 +1,50 @@
-var gulp   = require('gulp')
-  , babel  = require('gulp-babel')
-  , mocha  = require('gulp-mocha')
-  , eslint = require('gulp-eslint')
-  , babelr = require('babel/register');
+var gulp    = require('gulp')
+  , cache = require('gulp-cached')
+  , babel   = require('gulp-babel')
+  , mocha   = require('gulp-mocha')
+  , eslint  = require('gulp-eslint')
+  , babelr  = require('babel/register');
+
+
+var watch_glob;
+var all_glob = ['lib/**/*.js', 'test/**/*.js'];
+
+function glob() {
+  return watch_glob || all_glob
+}
 
 gulp.task('default', ['watch']);
 
-
-
-gulp.task('mocha',  function(){
-  return gulp.src('test/*.js')
-    .pipe(mocha({
-        compilers: { js: babelr }
-    }));
-});
-
-gulp.task('test', ['mocha']);
 
 /**
  * Watch lib & test files an on change
  * lint, build and run mocha
  */
 gulp.task('watch', function() {
-  var tasks = ['lint', 'test'];
+  // Do the tasks so it will cache them
+  // this way when you actually change something
+  // it only lints/tests what you changed
+  // gulp.start(['lint', 'test']);
 
-  gulp.start(tasks);
-  gulp.watch(['lib/**', 'test/**'], tasks);
+  gulp.watch(all_glob, function(event) {
+    watch_glob = event.path;
+    gulp.start(['lint', 'test']);
+  });
 });
 
 
-gulp.task('lint', function () {
-  return gulp.src(['lib/**/*.js', 'test/**/*.js'])
+gulp.task('test',  function(){
+  return gulp.src(glob())
+    //.pipe(cache('test'))
+    .pipe(mocha({
+      compilers: { js: babelr }
+    }));
+});
+
+
+gulp.task('lint', function (param) {
+  return gulp.src(glob())
+    //.pipe(cache('linting'))
     // eslint() attaches the lint output to the eslint property
     // of the file object so it can be used by other modules.
     .pipe(eslint())

@@ -1,4 +1,5 @@
 /*eslint no-extend-native:0 */
+/*eslint no-unused-vars:0 */
 var path = require('path');
 
 // Convenience
@@ -15,7 +16,7 @@ var chaiSubset = require('chai-subset');
 
 // Chai Promise Setup
 var chaiAsPromised = require('chai-as-promised');
-  chai.use(chaiAsPromised);
+    chai.use(chaiAsPromised);
 
 // // Sinon Setup
 // global.sinon = require("sinon");
@@ -59,6 +60,7 @@ global.before_promise = function(var_name, callback) {
     callback = var_name;
     var_name = 'subject';
   }
+
   before(function(){
     global.promise = callback().then(function(data){
       return (global[var_name] = data);

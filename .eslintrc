@@ -17,7 +17,8 @@
     "subject": true,
     "chai": false,
     "sinon": false,
-    "Replay": false
+    "Replay": false,
+    "l", false
   },
 
   "rules": {

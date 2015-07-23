@@ -1,25 +1,18 @@
 # intercom-api [![Build](https://img.shields.io/codeship/22c38720-0db2-0133-9521-0ae38d210868.svg)]()
 
-> Node client for the intercom.io api using [Stallion](https://github.com/ryedog/stallion)
+> Node client for the intercom.io api
 
-intercom-api uses [Stallion](https://github.com/ryedog/stallion) so it's
-* minimal code
-* easy to add new methods
-* promised based
+intercom-api uses [Stallion](https://github.com/ryedog/stallion) so it's minimal code, easy to add new methods and promised based
 
-It's a simple wrapper around the [Intercom.io api](https://doc.intercom.io/api) so requests and responses follow their documentation
-* [Common structures](https://doc.intercom.io/api/#common-api-structures)
-* [Error responses](https://doc.intercom.io/api/#errors)
-
-# Installation
+## Installation
 ```
 npm install intercom-api --save
 ```
 
-# Support Resources
+## Support Resources
 All methods are supported on all the below resources
 
-```
+```javascript
 * https://api.intercom.io/admins
 * https://api.intercom.io/companies
 * https://api.intercom.io/contacts
@@ -29,18 +22,27 @@ All methods are supported on all the below resources
 * https://api.intercom.io/users
 ```
 
-# Creating a client
-```
+* [users](#users)
+* [companies](#companies)
+
+## Overview
+intercom.io is a simple wrapper around the [Intercom.io api](https://doc.intercom.io/api) so requests and responses follow their documentation
+* [Common structures](https://doc.intercom.io/api/#common-api-structures)
+* [Error responses](https://doc.intercom.io/api/#errors)
+
+
+## Creating a client
+```javascript
 require Intercom = require('intercom-api');
 
-# You can find these in your app's integrations page under the "API Keys" section
+// You can find these in your app's integrations page under the "API Keys" section
 var app_id = 'jbslxytr';
 var api_key = '72cdef54ab2f9ecc53cc806a1b6c4ab3d40f14a4';
 
 var intercom = new Intercom(app_id, api_key);
 ```
 
-# Users
+## Users
 
 For the complete list of user attributes for the request & response see the [User Model](https://doc.intercom.io/api/#user-model)
 ```javascript
@@ -62,7 +64,12 @@ intercom.createUser(data).then(function(user) {
 });
 ```
 
-# Todo
+## Companies
+```javascript
+```
+
+
+## Todo
 
 1. Add support for https://api.intercom.io/conversations
 2. Add support for https://api.intercom.io/messages
