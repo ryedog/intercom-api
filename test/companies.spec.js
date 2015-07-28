@@ -1,5 +1,3 @@
-Replay.mode = 'record';
-
 describe('Companies Resource', function() {
   var company;
   var data = {

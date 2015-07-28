@@ -30,7 +30,9 @@ global.should = chai.should();
 // Replay (Like Ruby's VCR)
 global.Replay  = require('replay');
 Replay.fixtures = path.join(__dirname, 'fixtures/replay');
+Replay.mode = 'record';
 
+l('Replacy', Replay.mode);
 
 // Intercom Service
 //
@@ -62,7 +64,13 @@ global.before_promise = function(var_name, callback) {
   }
 
   before(function(){
-    global.promise = callback().then(function(data){
+    global.promise = callback()
+
+    .then(function(data){
+      return (global[var_name] = data);
+    })
+
+    .catch(function(data){
       return (global[var_name] = data);
     });
 

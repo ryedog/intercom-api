@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Intercom api', function(){
 
   describe('Api methods', function() {

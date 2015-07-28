@@ -1,6 +1,4 @@
-if (typeof task === 'undefined') require('./_bootstrap.js');
-
-Replay.mode = 'record';
+'use strict';
 
 var promise;
 var data = {

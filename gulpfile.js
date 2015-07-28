@@ -27,7 +27,7 @@ gulp.task('watch', function() {
   // gulp.start(['lint', 'test']);
 
   gulp.watch(all_glob, function(event) {
-    watch_glob = event.path;
+    watch_glob = ['test/_bootstrap.js', event.path];
     gulp.start(['lint', 'test']);
   });
 });

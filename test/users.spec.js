@@ -1,10 +1,8 @@
+'use strict';
+
 var shared = require('./shared.js');
-
-// // Set to 'record' to record new callouts
-Replay.mode = 'record';
-
-var data = {email: 'ryanmhubbard+1@gmail.com'};
-var user;
+var data = {email: 'ryanmhubbard+1@gmail.com'}
+  , user;
 
 describe('Users Resource', function() {
 

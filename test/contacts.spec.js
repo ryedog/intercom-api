@@ -1,8 +1,5 @@
+'use strict';
 /*eslint no-unused-vars:0 */
-if (typeof task === 'undefined') require('./_bootstrap.js');
-
-// Set to 'record' to record new callouts
-Replay.mode = 'record';
 
 var contacts
   , data1 = {email: 'ryanmhubbard+4@gmail.com'}
