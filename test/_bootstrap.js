@@ -56,14 +56,16 @@ global.intercom = new Intercom(app_id, api_key);
  * @return {Promise} which is provided to a before()
  */
 global.subject = null;
-global.before_promise = function(var_name, callback) {
+
+
+var hook_promise_handle = function(hook, var_name, callback) {
   // Polymorphic
   if ( typeof var_name === 'function') {
     callback = var_name;
     var_name = 'subject';
   }
 
-  before(function(){
+  hook.call(null, function(){
     global.promise = callback()
 
     .then(function(data){
@@ -76,6 +78,14 @@ global.before_promise = function(var_name, callback) {
 
     return global.promise;
   });
+};
+
+global.before_promise = function(var_name, callback) {
+  hook_promise_handle(before, var_name, callback);
+};
+
+global.beforeEachPromise = function(var_name, callback) {
+  hook_promise_handle(beforeEach, var_name, callback);
 };
 
 Array.prototype.has = function(value) {

@@ -13,6 +13,7 @@
     "Intercom": false,
     "intercom": false,
     "before_promise": false,
+    "beforeEachPromise": false,
     "promise": true,
     "subject": true,
     "chai": false,
