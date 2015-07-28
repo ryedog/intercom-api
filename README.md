@@ -73,5 +73,10 @@ intercom.createUser(data).then(function(user) {
 
 1. Add support for https://api.intercom.io/conversations
 2. Add support for https://api.intercom.io/messages
-3. Add support for https://api.intercom.io/counts
-4. Add support for https://api.intercom.io/events
+3. Add convenience method to get users for a company
+4. Add convenience method to remove a company from user
+5. Add convenience method to add a company to user
+6. Add convenience methods to
+  1. Add tag to users & companies (tagUser, tagUsers, tagCompany, tagCompanies)
+  2. Remove tag from users & companies
+  3. What about adding multiple tags?
