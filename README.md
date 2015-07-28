@@ -16,6 +16,8 @@ All methods are supported on all the below resources
 * https://api.intercom.io/admins
 * https://api.intercom.io/companies
 * https://api.intercom.io/contacts
+* https://api.intercom.io/counts
+* https://api.intercom.io/events
 * https://api.intercom.io/notes
 * https://api.intercom.io/segments
 * https://api.intercom.io/tags
@@ -30,6 +32,7 @@ intercom.io is a simple wrapper around the [Intercom.io api](https://doc.interco
 * [Common structures](https://doc.intercom.io/api/#common-api-structures)
 * [Error responses](https://doc.intercom.io/api/#errors)
 
+All methods return a ES6 promise.
 
 ## Creating a client
 ```javascript
@@ -68,6 +71,7 @@ intercom.createUser(data).then(function(user) {
 ```javascript
 ```
 
+Will add more examples soon, but they all follow the same pattern just take a look at the [Intercom.io api](https://doc.intercom.io/api) docs
 
 ## Todo
 
