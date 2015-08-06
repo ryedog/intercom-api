@@ -1,6 +1,6 @@
 {
   "name": "intercom-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Node client for the intercom.io api",
   "main": "lib/intercom-api.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/ryedog/intercom-api#readme",
   "dependencies": {
-    "stallion": "^0.4.4"
+    "stallion": "^0.4.5"
   },
   "devDependencies": {
     "babel": "^5.6.23",

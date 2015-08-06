@@ -1,5 +1,5 @@
 var gulp    = require('gulp')
-  , cache = require('gulp-cached')
+  , cache   = require('gulp-cached')
   , babel   = require('gulp-babel')
   , mocha   = require('gulp-mocha')
   , eslint  = require('gulp-eslint')
